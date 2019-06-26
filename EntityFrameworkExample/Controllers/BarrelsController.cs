@@ -28,5 +28,26 @@ namespace EntityFrameworkExample.Controllers
       
 
        
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = service.GetStudentById((int)id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Barrel barrel = service.Barrel.Find(id);
+            service.Barrels.Remove(barrel);
+            return RedirectToAction("Index");
+        }
     }
 }

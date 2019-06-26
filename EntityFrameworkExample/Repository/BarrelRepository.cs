@@ -32,5 +32,9 @@ namespace EntityFrameworkExample.Repository
         }
 
 
+        public DeleteBarrel(Barrel toDelete)
+        {
+            dbContext.Barrels.Remove(toDelete);
+        }
     }
 }
