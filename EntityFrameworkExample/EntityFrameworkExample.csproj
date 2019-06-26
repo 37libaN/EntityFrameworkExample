@@ -148,6 +148,10 @@
     <Compile Include="Service\BarrelService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\EntityFrameworkExample.Data.Context.DataContext.mdf" />
+    <Content Include="App_Data\EntityFrameworkExample.Data.Context.DataContext_log.ldf">
+      <DependentUpon>EntityFrameworkExample.Data.Context.DataContext.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -190,9 +194,7 @@
     <Content Include="Views\Barrels\Index.cshtml" />
     <Content Include="Views\Barrels\InfoPage.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
