@@ -33,5 +33,10 @@ namespace EntityFrameworkExample.Service
         {
             return repository.GetBarrelById(id);
         }
+
+        public void DeleteBarrel(Barrel toDelete)
+        { 
+            repository.DeleteBarrel(toDelete);
+        }
     }
 }
