@@ -1,36 +1,39 @@
 ﻿@model IEnumerable<EntityFrameworkExample.Models.Barrel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Barrel Storage";
 }
+    <head>
+        <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    </head>
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Barrel", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Radius)
+            Radius
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Height)
+            Height
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Weight)
+            Weight
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ConstructionMaterial)
+            Construction Material
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Contents)
+            Contents
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CurrentLocation)
+            Current Location
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateCreated)
+            Date Added
         </th>
         <th></th>
     </tr>
