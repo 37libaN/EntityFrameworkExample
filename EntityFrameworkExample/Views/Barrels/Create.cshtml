@@ -1,18 +1,15 @@
 ﻿@model EntityFrameworkExample.Models.Barrel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Creating Barrel";
 }
-
-<h2>Create</h2>
-
-
+<br />
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Barrel</h4>
+        <h4>Creating Barrel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
