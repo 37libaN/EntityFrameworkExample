@@ -18,7 +18,7 @@ namespace EntityFrameworkExample.Controllers
 
         public ActionResult Index()
         {
-            return View(service.GetAllBarrels());
+            return View(service.GetActiveBarrels());
         }
 
         public ActionResult Create()
@@ -31,6 +31,7 @@ namespace EntityFrameworkExample.Controllers
         public ActionResult Create([Bind(Include = "Id,Radius,Height,Weight,ConstructionMaterial,Contents,CurrentLocation")] Barrel barrel)
         {
             barrel.DateCreated = DateTime.Now;
+            barrel.hidden = false;
             if (ModelState.IsValid)
             {
                 service.AddBarrel(barrel);
@@ -58,7 +59,8 @@ namespace EntityFrameworkExample.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Barrel barrel = service.GetBarrelById(id);
-            service.DeleteBarrel(barrel);
+            barrel.hidden = true;
+            service.SaveEdits(barrel);
             return RedirectToAction("Index");
         }
 
@@ -102,7 +104,43 @@ namespace EntityFrameworkExample.Controllers
             {
                 return HttpNotFound();
             }
+            double volume = service.Volume(barrel);
+            string duration = service.Duration(barrel);
+            BarrelWrapper wrapper = new BarrelWrapper(barrel, volume, duration);
+            return View(wrapper);
+        }
+        public ActionResult Archived()
+        {
+            return View(service.GetArchivedBarrels());
+        }
+
+        public ActionResult Unarchive(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Barrel barrel = service.GetBarrelById((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
             return View(barrel);
+        }
+
+        [HttpPost, ActionName("Unarchive")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ArchiveConfirmed(int id)
+        {
+            Barrel barrel = service.GetBarrelById(id);
+            barrel.hidden = false;
+            service.SaveEdits(barrel);
+            return RedirectToAction("Archived");
+        }
+
+        public ActionResult InfoPage()
+        {
+            return View();
         }
     }
 }

@@ -139,8 +139,13 @@
     <Compile Include="Migrations\201906261447449_Barrel.Designer.cs">
       <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906261758183_add-migration Barrel.cs" />
+    <Compile Include="Migrations\201906261758183_add-migration Barrel.Designer.cs">
+      <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Barrel.cs" />
+    <Compile Include="Models\BarrelWrapper.cs" />
     <Compile Include="Models\ExampleChildEntity.cs" />
     <Compile Include="Models\ExampleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,6 +165,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Barrel Logo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -173,6 +179,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Style\Background.gif" />
+    <Content Include="Style\StyleSheet.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -192,6 +200,9 @@
     <Content Include="Views\Barrels\Details.cshtml" />
     <Content Include="Views\Barrels\Edit.cshtml" />
     <Content Include="Views\Barrels\Index.cshtml" />
+    <Content Include="Views\Barrels\Archived.cshtml" />
+    <Content Include="Views\Barrels\Unarchive.cshtml" />
+    <Content Include="Views\Barrels\InfoPage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -210,6 +221,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906261447449_Barrel.resx">
       <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906261758183_add-migration Barrel.resx">
+      <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

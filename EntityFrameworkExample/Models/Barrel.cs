@@ -17,5 +17,6 @@ namespace EntityFrameworkExample.Models
         public string Contents { get; set; }
         public string CurrentLocation { get; set; }
         public DateTime DateCreated { get; set; }
+        public Boolean hidden { get; set; }
     }
 }
