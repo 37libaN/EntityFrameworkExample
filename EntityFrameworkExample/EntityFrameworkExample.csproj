@@ -129,6 +129,7 @@
     <Compile Include="Controllers\BarrelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Configurations\BarrelConfiguration.cs" />
+    <Compile Include="Data\Configurations\CubeConfiguration.cs" />
     <Compile Include="Data\Configurations\ExampleChildEntityConfiguration.cs" />
     <Compile Include="Data\Configurations\ExampleEntityConfiguration.cs" />
     <Compile Include="Data\Context\DataContext.cs" />
@@ -143,9 +144,14 @@
     <Compile Include="Migrations\201906261758183_add-migration Barrel.Designer.cs">
       <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906261937404_Cube.cs" />
+    <Compile Include="Migrations\201906261937404_Cube.Designer.cs">
+      <DependentUpon>201906261937404_Cube.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Barrel.cs" />
     <Compile Include="Models\BarrelWrapper.cs" />
+    <Compile Include="Models\Cube.cs" />
     <Compile Include="Models\ExampleChildEntity.cs" />
     <Compile Include="Models\ExampleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906261758183_add-migration Barrel.resx">
       <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906261937404_Cube.resx">
+      <DependentUpon>201906261937404_Cube.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
