@@ -102,7 +102,12 @@ namespace EntityFrameworkExample.Controllers
             {
                 return HttpNotFound();
             }
-            return View(barrel);
+            double volume = service.Volume(barrel);
+            string duration = service.Duration(barrel);
+            BarrelWrapper wrapper = new BarrelWrapper(barrel, volume, duration);
+            return View(wrapper);
         }
+
+        
     }
 }

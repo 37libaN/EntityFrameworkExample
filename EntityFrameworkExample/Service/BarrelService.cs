@@ -39,5 +39,26 @@ namespace EntityFrameworkExample.Service
         { 
             repository.DeleteBarrel(toDelete);
         }
+
+        public double Volume(Barrel barrel)
+        {
+            return Math.Round(Math.PI * barrel.Radius * barrel.Radius * barrel.Height, 3);
+        }
+
+        public string Duration(Barrel barrel)
+        {
+            TimeSpan duration = DateTime.Now - barrel.DateCreated;
+            
+            double duration2 = duration.TotalSeconds;
+            int days = (int) (duration2 / 86400);
+            duration2 = duration2 - (days * 86400.0);
+            int hours = (int)(duration2 / 3600);
+            duration2 = duration2 - (hours * 3600.0);
+            int minutes = (int)(duration2 / 60);
+            duration2 = duration2 - (minutes * 60.0);
+            int seconds = (int)duration2;
+            string sentence = days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds.";
+            return sentence;
+        }
     }
 }
