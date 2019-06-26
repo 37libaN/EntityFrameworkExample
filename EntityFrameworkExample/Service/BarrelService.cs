@@ -25,6 +25,18 @@ namespace EntityFrameworkExample.Service
             return repository.GetAllBarrels();
         }
 
+        public List<Barrel> GetActiveBarrels()
+        {
+            List<Barrel> activeBarrels = new List<Barrel>();
+            List<Barrel> all = this.GetAllBarrels();
+            foreach(Barrel b in all)
+            {
+                if(!b.hidden)
+                    activeBarrels.Add(b);
+            }
+            return activeBarrels;
+        }
+
         public void AddBarrel(Barrel toAdd)
         {
             repository.AddBarrel(toAdd);

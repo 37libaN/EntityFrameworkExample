@@ -1,18 +1,12 @@
 ﻿@model IEnumerable<EntityFrameworkExample.Models.Barrel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "History";
 }
 
-<h2>Index</h2>
+<h2>History</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<!--pls get rid of this-->
-<p>
-    @Html.ActionLink("See Archived", "Archived")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -63,9 +57,8 @@
             @Html.DisplayFor(modelItem => item.DateCreated)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Un-archive", "Un-archive", new { id=item.Id })
         </td>
     </tr>
 }

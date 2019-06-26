@@ -18,7 +18,7 @@ namespace EntityFrameworkExample.Controllers
 
         public ActionResult Index()
         {
-            return View(service.GetAllBarrels());
+            return View(service.GetActiveBarrels());
         }
 
         public ActionResult Create()
@@ -31,6 +31,7 @@ namespace EntityFrameworkExample.Controllers
         public ActionResult Create([Bind(Include = "Id,Radius,Height,Weight,ConstructionMaterial,Contents,CurrentLocation")] Barrel barrel)
         {
             barrel.DateCreated = DateTime.Now;
+            barrel.hidden = false;
             if (ModelState.IsValid)
             {
                 service.AddBarrel(barrel);
@@ -58,7 +59,8 @@ namespace EntityFrameworkExample.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Barrel barrel = service.GetBarrelById(id);
-            service.DeleteBarrel(barrel);
+            barrel.hidden = true;
+            service.SaveEdits(barrel);
             return RedirectToAction("Index");
         }
 

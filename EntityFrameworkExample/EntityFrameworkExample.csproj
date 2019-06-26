@@ -139,6 +139,10 @@
     <Compile Include="Migrations\201906261447449_Barrel.Designer.cs">
       <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906261758183_add-migration Barrel.cs" />
+    <Compile Include="Migrations\201906261758183_add-migration Barrel.Designer.cs">
+      <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Barrel.cs" />
     <Compile Include="Models\ExampleChildEntity.cs" />
@@ -192,6 +196,7 @@
     <Content Include="Views\Barrels\Details.cshtml" />
     <Content Include="Views\Barrels\Edit.cshtml" />
     <Content Include="Views\Barrels\Index.cshtml" />
+    <Content Include="Views\Barrels\Archived.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -210,6 +215,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906261447449_Barrel.resx">
       <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906261758183_add-migration Barrel.resx">
+      <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
