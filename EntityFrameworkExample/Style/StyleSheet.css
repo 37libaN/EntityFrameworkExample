@@ -1,0 +1,40 @@
+﻿body {
+    background-image: url("Background.gif");
+    background-repeat:no-repeat;
+}
+
+h4{
+    color: #8B92B3;
+    text-align:center;
+    text-transform:uppercase;
+    font-family: Arial;
+}
+h2 {
+    color: #1b7980;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial;
+    letter-spacing: 5px;
+    line-height: 30px;
+    text-size-adjust: 5000%;
+}
+
+tr {
+    color:#0cdede;
+}
+
+td {
+    color: #8B92B3;
+    text-align: center;
+    text-transform: lowercase;
+    font-family: Arial;
+}
+
+dt {
+    color: #8B92B3;
+    text-align: center;
+    text-transform: lowercase;
+    font-family: Arial;
+}
+
+
