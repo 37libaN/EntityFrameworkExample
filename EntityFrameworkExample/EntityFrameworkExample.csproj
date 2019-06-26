@@ -127,13 +127,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Configurations\BarrelConfiguration.cs" />
     <Compile Include="Data\Configurations\ExampleChildEntityConfiguration.cs" />
     <Compile Include="Data\Configurations\ExampleEntityConfiguration.cs" />
     <Compile Include="Data\Context\DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906261447449_Barrel.cs" />
+    <Compile Include="Migrations\201906261447449_Barrel.Designer.cs">
+      <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Barrel.cs" />
     <Compile Include="Models\ExampleChildEntity.cs" />
     <Compile Include="Models\ExampleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,6 +196,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906261447449_Barrel.resx">
+      <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
