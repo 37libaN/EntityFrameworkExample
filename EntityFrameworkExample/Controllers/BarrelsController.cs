@@ -14,10 +14,19 @@ namespace EntityFrameworkExample.Controllers
 {
     public class BarrelsController : Controller
     {
-        private BarrelService service;
-        public BarrelsController()
+        private BarrelService service = new BarrelService();
+
+        public ActionResult Index()
         {
-            service = new BarrelService();
+            return View(service.GetAllBarrels());
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+      
+
+       
     }
 }
