@@ -104,5 +104,9 @@ namespace EntityFrameworkExample.Controllers
             }
             return View(barrel);
         }
+        public ActionResult InfoPage()
+        {
+            return View();
+        }
     }
 }
