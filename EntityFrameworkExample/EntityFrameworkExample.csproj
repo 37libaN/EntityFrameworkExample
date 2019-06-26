@@ -195,6 +195,7 @@
     <Content Include="Views\Barrels\Details.cshtml" />
     <Content Include="Views\Barrels\Edit.cshtml" />
     <Content Include="Views\Barrels\Index.cshtml" />
+    <Content Include="Views\Barrels\InfoPage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
