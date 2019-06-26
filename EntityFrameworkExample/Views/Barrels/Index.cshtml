@@ -1,13 +1,16 @@
 ﻿@model IEnumerable<EntityFrameworkExample.Models.Barrel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Barrel Storage";
 }
+    <head>
+        <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    </head>
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Barrel", "Create")
 </p>
 <!--pls get rid of this-->
 <p>
@@ -16,25 +19,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Radius) (feet)
+            Radius
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Height) (feet)
+            Height
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Weight) (pounds)
+            Weight
         </th>
         <th>
-            @Html.DisplayName("Construction Material")
+            Construction Material
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Contents)
+            Contents
         </th>
         <th>
-            @Html.DisplayName("Current Location")
+            Current Location
         </th>
         <th>
-            @Html.DisplayName("Date Created")
+            Date Added
         </th>
         <th></th>
     </tr>

@@ -138,5 +138,9 @@ namespace EntityFrameworkExample.Controllers
             return RedirectToAction("Archived");
         }
 
+        public ActionResult InfoPage()
+        {
+            return View();
+        }
     }
 }
