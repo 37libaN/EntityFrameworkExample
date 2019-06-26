@@ -37,6 +37,18 @@ namespace EntityFrameworkExample.Service
             return activeBarrels;
         }
 
+        public List<Barrel> GetArchivedBarrels()
+        {
+            List<Barrel> archivedBarrels = new List<Barrel>();
+            List<Barrel> all = this.GetAllBarrels();
+            foreach (Barrel b in all)
+            {
+                if (b.hidden)
+                    archivedBarrels.Add(b);
+            }
+            return archivedBarrels;
+        }
+
         public void AddBarrel(Barrel toAdd)
         {
             repository.AddBarrel(toAdd);

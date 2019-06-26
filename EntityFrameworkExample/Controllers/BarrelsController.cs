@@ -106,5 +106,34 @@ namespace EntityFrameworkExample.Controllers
             }
             return View(barrel);
         }
+        public ActionResult Archived()
+        {
+            return View(service.GetArchivedBarrels());
+        }
+
+        public ActionResult Unarchive(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Barrel barrel = service.GetBarrelById((int)id);
+            if (barrel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(barrel);
+        }
+
+        [HttpPost, ActionName("Unarchive")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ArchiveConfirmed(int id)
+        {
+            Barrel barrel = service.GetBarrelById(id);
+            barrel.hidden = false;
+            service.SaveEdits(barrel);
+            return RedirectToAction("Archived");
+        }
+
     }
 }

@@ -197,6 +197,7 @@
     <Content Include="Views\Barrels\Edit.cshtml" />
     <Content Include="Views\Barrels\Index.cshtml" />
     <Content Include="Views\Barrels\Archived.cshtml" />
+    <Content Include="Views\Barrels\Unarchive.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
