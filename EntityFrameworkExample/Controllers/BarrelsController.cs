@@ -14,10 +14,40 @@ namespace EntityFrameworkExample.Controllers
 {
     public class BarrelsController : Controller
     {
-        private BarrelService service;
-        public BarrelsController()
+        private BarrelService service = new BarrelService();
+
+        public ActionResult Index()
         {
-            service = new BarrelService();
+            return View(service.GetAllBarrels());
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+      
+
+       
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = service.GetStudentById((int)id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Barrel barrel = service.Barrel.Find(id);
+            service.Barrels.Remove(barrel);
+            return RedirectToAction("Index");
         }
     }
 }

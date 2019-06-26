@@ -18,5 +18,20 @@ namespace EntityFrameworkExample.Service
         {
             repository.SaveEdits(toSave);
         }
+
+        public List<Barrel> GetAllBarrels()
+        {
+            return repository.GetAllBarrels();
+        }
+
+        public void AddBarrel(Barrel toAdd)
+        {
+            repository.AddBarrel(toAdd);
+        }
+
+        public Barrel GetBarrelById(int id)
+        {
+            return repository.GetBarrelById(id);
+        }
     }
 }
