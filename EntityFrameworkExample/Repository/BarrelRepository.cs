@@ -2,6 +2,7 @@
 using EntityFrameworkExample.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -32,9 +33,16 @@ namespace EntityFrameworkExample.Repository
         }
 
 
-        public DeleteBarrel(Barrel toDelete)
+        public void DeleteBarrel(Barrel toDelete)
         {
             dbContext.Barrels.Remove(toDelete);
+            dbContext.SaveChanges();
+        }
+
+        public void SaveEdits(Barrel toSave)
+        {
+            dbContext.Entry(toSave).State = EntityState.Modified;
+            dbContext.SaveChanges();
         }
     }
 }

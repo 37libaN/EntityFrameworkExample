@@ -15,6 +15,11 @@ namespace EntityFrameworkExample.Service
             repository = new BarrelRepository();
         }
 
+        public void SaveEdits(Barrel toSave)
+        {
+            repository.SaveEdits(toSave);
+        }
+
         public List<Barrel> GetAllBarrels()
         {
             return repository.GetAllBarrels();
@@ -28,6 +33,11 @@ namespace EntityFrameworkExample.Service
         public Barrel GetBarrelById(int id)
         {
             return repository.GetBarrelById(id);
+        }
+
+        public void DeleteBarrel(Barrel toDelete)
+        { 
+            repository.DeleteBarrel(toDelete);
         }
     }
 }
