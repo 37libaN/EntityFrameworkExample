@@ -28,8 +28,9 @@ namespace EntityFrameworkExample.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,name,age,luckyNumber")] Barrel barrel)
+        public ActionResult Create([Bind(Include = "Id,Radius,Height,Weight,ConstructionMaterial,Contents,CurrentLocation")] Barrel barrel)
         {
+            barrel.DateCreated = DateTime.Now;
             if (ModelState.IsValid)
             {
                 service.AddBarrel(barrel);

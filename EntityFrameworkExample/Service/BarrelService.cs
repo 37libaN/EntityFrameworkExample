@@ -14,6 +14,7 @@ namespace EntityFrameworkExample.Service
         {
             repository = new BarrelRepository();
         }
+
         public void SaveEdits(Barrel toSave)
         {
             repository.SaveEdits(toSave);
