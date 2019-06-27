@@ -129,28 +129,30 @@
     <Compile Include="Controllers\BarrelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Configurations\BarrelConfiguration.cs" />
+    <Compile Include="Data\Configurations\CubeConfiguration.cs" />
     <Compile Include="Data\Configurations\ExampleChildEntityConfiguration.cs" />
     <Compile Include="Data\Configurations\ExampleEntityConfiguration.cs" />
     <Compile Include="Data\Context\DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906261447449_Barrel.cs" />
-    <Compile Include="Migrations\201906261447449_Barrel.Designer.cs">
-      <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906261758183_add-migration Barrel.cs" />
-    <Compile Include="Migrations\201906261758183_add-migration Barrel.Designer.cs">
-      <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
+    <Compile Include="Migrations\201906271505139_barrelcube.cs" />
+    <Compile Include="Migrations\201906271505139_barrelcube.Designer.cs">
+      <DependentUpon>201906271505139_barrelcube.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Barrel.cs" />
+    <Compile Include="Models\BarrelAndCubeWrapper.cs" />
     <Compile Include="Models\BarrelWrapper.cs" />
+    <Compile Include="Models\Cube.cs" />
+    <Compile Include="Models\CubeWrapper.cs" />
     <Compile Include="Models\ExampleChildEntity.cs" />
     <Compile Include="Models\ExampleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BarrelRepository.cs" />
+    <Compile Include="Repository\CubeRepository.cs" />
     <Compile Include="Service\BarrelService.cs" />
+    <Compile Include="Service\CubeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EntityFrameworkExample.Data.Context.DataContext.mdf" />
@@ -202,8 +204,12 @@
     <Content Include="Views\Barrels\Archived.cshtml" />
     <Content Include="Views\Barrels\Unarchive.cshtml" />
     <Content Include="Views\Barrels\InfoPage.cshtml" />
+    <Content Include="Views\Barrels\CubeUnarchive.cshtml" />
+    <Content Include="Views\Barrels\CubeDetails.cshtml" />
+    <Content Include="Views\Barrels\CubeDelete.cshtml" />
+    <Content Include="Views\Barrels\CubeCreate.cshtml" />
+    <Content Include="Views\Barrels\CubeEdit.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -218,11 +224,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906261447449_Barrel.resx">
-      <DependentUpon>201906261447449_Barrel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906261758183_add-migration Barrel.resx">
-      <DependentUpon>201906261758183_add-migration Barrel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906271505139_barrelcube.resx">
+      <DependentUpon>201906271505139_barrelcube.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

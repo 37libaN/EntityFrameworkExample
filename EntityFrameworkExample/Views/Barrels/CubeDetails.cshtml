@@ -1,0 +1,78 @@
+﻿@model EntityFrameworkExample.Models.CubeWrapper
+
+@{
+    ViewBag.Title = "CubeDetails";
+}
+
+<h2>CubeDetails</h2>
+
+<div>
+    <h4>Cube</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cube.SideLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cube.SideLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cube.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cube.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cube.ConstructionMaterial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cube.ConstructionMaterial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cube.Contents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cube.Contents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cube.CurrentLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cube.CurrentLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cube.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cube.DateCreated)
+        </dd>
+
+        <dt>
+            Volume:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.volume)
+        </dd>
+        <dt>
+            Duration:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "CubeEdit", new { id = Model.cube.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
