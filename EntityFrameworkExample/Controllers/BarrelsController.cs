@@ -15,10 +15,12 @@ namespace EntityFrameworkExample.Controllers
     public class BarrelsController : Controller
     {
         private BarrelService service = new BarrelService();
+        private CubeService cubeService = new CubeService();
 
         public ActionResult Index()
         {
-            return View(service.GetActiveBarrels());
+            BarrelAndCubeWrapper barrelsAndCubes = new BarrelAndCubeWrapper(service.GetActiveBarrels(), cubeService.GetActiveCubes());
+            return View(barrelsAndCubes);
         }
 
         public ActionResult Create()
@@ -111,7 +113,8 @@ namespace EntityFrameworkExample.Controllers
         }
         public ActionResult Archived()
         {
-            return View(service.GetArchivedBarrels());
+            BarrelAndCubeWrapper barrelsAndCubes = new BarrelAndCubeWrapper(service.GetAllBarrels(), cubeService.GetAllCubes());
+            return View(barrelsAndCubes);
         }
 
         public ActionResult Unarchive(int? id)

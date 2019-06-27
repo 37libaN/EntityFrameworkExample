@@ -150,8 +150,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Barrel.cs" />
+    <Compile Include="Models\BarrelAndCubeWrapper.cs" />
     <Compile Include="Models\BarrelWrapper.cs" />
     <Compile Include="Models\Cube.cs" />
+    <Compile Include="Models\CubeWrapper.cs" />
     <Compile Include="Models\ExampleChildEntity.cs" />
     <Compile Include="Models\ExampleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,6 +213,11 @@
     <Content Include="Views\Barrels\Archived.cshtml" />
     <Content Include="Views\Barrels\Unarchive.cshtml" />
     <Content Include="Views\Barrels\InfoPage.cshtml" />
+    <Content Include="Views\Barrels\CubeUnarchive.cshtml" />
+    <Content Include="Views\Barrels\CubeDetails.cshtml" />
+    <Content Include="Views\Barrels\CubeDelete.cshtml" />
+    <Content Include="Views\Barrels\CubeCreate.cshtml" />
+    <Content Include="Views\Barrels\CubeEdit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
