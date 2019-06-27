@@ -11,6 +11,12 @@
 <h2>Archived</h2>
 
 <h3>Barrels</h3>
+<div class="row">
+    <div class="form-group">
+        <input type="text" class="form-control" id="searchBoxBarrel" placeholder="Enter search term" onkeyup="searchTable(0)">
+        <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
+    </div>
+</div>
 <table class="table" id="indexTableBarrel">
     <tr>
         <th onclick="sortTable(0, 0)">
@@ -68,6 +74,12 @@
     }
 </table>
 <h3>Cubes</h3>
+<div class="row">
+    <div class="form-group">
+        <input type="text" class="form-control" id="searchBoxCube" placeholder="Enter search term" onkeyup="searchTable(1)">
+        <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
+    </div>
+</div>
 <table class="table" id="indexTableCube">
     <tr>
         <th onclick="sortTable(0, 1)">
