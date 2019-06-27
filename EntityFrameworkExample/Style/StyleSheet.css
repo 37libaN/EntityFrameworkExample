@@ -1,5 +1,8 @@
 ﻿body {
-    background-image:none;
+    background-image: url(USA.jpg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
 }
 
 p{
