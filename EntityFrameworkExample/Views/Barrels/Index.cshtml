@@ -3,15 +3,16 @@
 @{
     ViewBag.Title = "Barrel Storage";
 }
-    <head>
-        <link href="~/Style/StyleSheet.css" rel="stylesheet" />
-    </head>
+<head>
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+</head>
 
 <h2>Index</h2>
-
+<h3>Barrels</h3>
 <p>
     @Html.ActionLink("Add New Barrel", "Create")
 </p>
+
 <button name="viewReset">Reset View</button>
 <table class="table" id="indexTable">
     <tr>
@@ -38,7 +39,7 @@
         </th>
         <th></th>
     </tr>
-
+    
     @foreach (var item in Model.barrels)
     {
         <tr>
@@ -70,99 +71,103 @@
             </td>
         </tr>
     }
-    </table>
-    <table class="table" id="indexCubeTable">
+</table>
+<h3>Cubes</h3>
+<p>
+    @Html.ActionLink("Add New Cube", "CubeCreate")
+</p>
+<table class="table" id="indexCubeTable">
+    <tr>
+        <th onclick="sortTable(0)">
+            Side Length
+        </th>
+        <th onclick="sortTable(1)">
+            Weight
+        </th>
+        <th onclick="sortTable(2)">
+            Construction Material
+        </th>
+        <th onclick="sortTable(3)">
+            Contents
+        </th>
+        <th onclick="sortTable(4)">
+            Current Location
+        </th>
+        <th onclick="sortTable(5)">
+            Date Added
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.cubes)
+    {
         <tr>
-            <th onclick="sortTable(0)">
-                Radius
-            </th>
-            <th onclick="sortTable(1)">
-                Weight
-            </th>
-            <th onclick="sortTable(2)">
-                Construction Material
-            </th>
-            <th onclick="sortTable(3)">
-                Contents
-            </th>
-            <th onclick="sortTable(4)">
-                Current Location
-            </th>
-            <th onclick="sortTable(5)">
-                Date Added
-            </th>
-            <th></th>
+            <td>
+                @Html.DisplayFor(modelItem => item.SideLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConstructionMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "CubeEdit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "CubeDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "CubeDelete", new { id = item.Id })
+            </td>
         </tr>
+    }
 
-        @foreach (var item in Model.cubes)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SideLength)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ConstructionMaterial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Contents)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CurrentLocation)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateCreated)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "CubeEdit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "CubeDetails", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "CubeDelete", new { id = item.Id })
-                </td>
-            </tr>
-        }
-
-    </table>
-    <script>
-        function sortTable(n) {
-            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-            table = document.getElementById("indexTable");
-            switching = true;
-            dir = "asc";
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[n].innerHTML;
-                    y = rows[i + 1].getElementsByTagName("TD")[n].innerHTML;
-                    if (dir == "asc") {
-                        if ((!isNaN(x) && Number(x) > Number(y)) ||
-                            (Date.parse(x) instanceof Date && Date(x) > Date(y)) ||
-                            (x.trim().toLowerCase() > y.trim().toLowerCase())) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    } else if (dir == "desc") {
-                        if ((!isNaN(x) && Number(x) < Number(y)) ||
-                            (Date.parse(x) instanceof Date && Date(x) < Date(y)) ||
-                            (x.trim().toLowerCase() < y.trim().toLowerCase())) {
-                            shouldSwitch = true;
-                            break;
-                        }
+</table>
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("indexTable");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n].innerHTML;
+                y = rows[i + 1].getElementsByTagName("TD")[n].innerHTML;
+                if (dir == "asc") {
+                    if ((!isNaN(x) && Number(x) > Number(y)) ||
+                        (Date.parse(x) instanceof Date && Date(x) > Date(y)) ||
+                        (x.trim().toLowerCase() > y.trim().toLowerCase())) {
+                        shouldSwitch = true;
+                        break;
                     }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    switchcount++;
-                } else {
-                    if (switchcount == 0 && dir == "asc") {
-                        dir = "desc";
-                        switching = true;
+                } else if (dir == "desc") {
+                    if ((!isNaN(x) && Number(x) < Number(y)) ||
+                        (Date.parse(x) instanceof Date && Date(x) < Date(y)) ||
+                        (x.trim().toLowerCase() < y.trim().toLowerCase())) {
+                        shouldSwitch = true;
+                        break;
                     }
                 }
             }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
         }
-    </script>
+    }
+</script>

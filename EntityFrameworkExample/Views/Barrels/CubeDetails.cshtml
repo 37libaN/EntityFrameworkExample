@@ -1,4 +1,4 @@
-﻿@model EntityFrameworkExample.Models.Cube
+﻿@model EntityFrameworkExample.Models.CubeWrapper
 
 @{
     ViewBag.Title = "CubeDetails";
@@ -11,55 +11,68 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.SideLength)
+            @Html.DisplayNameFor(model => model.cube.SideLength)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SideLength)
+            @Html.DisplayFor(model => model.cube.SideLength)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Weight)
+            @Html.DisplayNameFor(model => model.cube.Weight)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Weight)
+            @Html.DisplayFor(model => model.cube.Weight)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ConstructionMaterial)
+            @Html.DisplayNameFor(model => model.cube.ConstructionMaterial)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ConstructionMaterial)
+            @Html.DisplayFor(model => model.cube.ConstructionMaterial)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Contents)
+            @Html.DisplayNameFor(model => model.cube.Contents)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Contents)
+            @Html.DisplayFor(model => model.cube.Contents)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CurrentLocation)
+            @Html.DisplayNameFor(model => model.cube.CurrentLocation)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CurrentLocation)
+            @Html.DisplayFor(model => model.cube.CurrentLocation)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DateCreated)
+            @Html.DisplayNameFor(model => model.cube.DateCreated)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DateCreated)
+            @Html.DisplayFor(model => model.cube.DateCreated)
+        </dd>
+
+        <dt>
+            Volume:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.volume)
+        </dd>
+        <dt>
+            Duration:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duration)
         </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "CubeEdit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "CubeEdit", new { id = Model.cube.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

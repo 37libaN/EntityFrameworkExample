@@ -1,12 +1,12 @@
 ﻿@model EntityFrameworkExample.Models.BarrelAndCubeWrapper
 
 @{
-    ViewBag.Title = "History";
+    ViewBag.Title = "Archived";
 }
 
-<h2>History</h2>
+<h2>Archived</h2>
 
-
+<h3>Barrels</h3>
 <table class="table">
     <tr>
         <th>
@@ -63,10 +63,11 @@
         </tr>
     }
 </table>
+<h3>Cubes</h3>
 <table class="table" id="archiveCubeTable">
     <tr>
         <th>
-            Radius
+            Side Length
         </th>
         <th>
             Weight
