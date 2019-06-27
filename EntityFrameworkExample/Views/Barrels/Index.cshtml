@@ -1,11 +1,15 @@
 ﻿@model EntityFrameworkExample.Models.BarrelAndCubeWrapper
 
 @{
+    /**/
+
     ViewBag.Title = "Barrel Storage";
 }
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link href="~/Style/StyleSheet.css" rel="stylesheet" />
     <script src="~/Scripts/Main.js"></script>
+</head>
 <div class="container-fluid">
     <div class="row">
         <h2>Index</h2>
@@ -22,102 +26,72 @@
             </div>
             <div class="row">
                 <div class="form-group">
+                    <input type="text" class="form-control" id="searchBoxBarrel" placeholder="Enter search term" onkeyup="searchTable(0)">
+                    <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
                 </div>
             </div>
         </div>
         <div class="col-sm-10">
+            <table class="table" id="indexTableBarrel">
+                <tr>
+                    <th onclick="sortTable(0, 0)">
+                        Radius (feet)
+                    </th>
+                    <th onclick="sortTable(1, 0)">
+                        Height (feet)
+                    </th>
+                    <th onclick="sortTable(2, 0)">
+                        Weight (pounds)
+                    </th>
+                    <th onclick="sortTable(3, 0)">
+                        Construction Material
+                    </th>
+                    <th onclick="sortTable(4, 0)">
+                        Contents
+                    </th>
+                    <th onclick="sortTable(5, 0)">
+                        Current Location
+                    </th>
+                    <th onclick="sortTable(6, 0)">
+                        Date Added
+                    </th>
+                    <th></th>
+                </tr>
 
-    <input type="text" class="form-control" id="searchBoxBarrel" placeholder="Enter search term" onkeyup="searchTable(0)">
-    <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
+                @foreach (var item in Model.barrels)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Radius)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Height)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Weight)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ConstructionMaterial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contents)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CurrentLocation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateCreated)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </table>
         </div>
     </div>
-</div>
-<table class="table" id="indexTableBarrel">
-    <tr>
-        <th onclick="sortTable(0, 0)">
-            Radius (feet)
-        </th>
-        <th onclick="sortTable(1, 0)">
-            Height (feet)
-        </th>
-        <th onclick="sortTable(2, 0)">
-            Weight (pounds)
-        </th>
-        <th onclick="sortTable(3, 0)">
-            Construction Material
-        </th>
-        <th onclick="sortTable(4, 0)">
-            Contents
-        </th>
-        <th onclick="sortTable(5, 0)">
-            Current Location
-        </th>
-        <th onclick="sortTable(6, 0)">
-            Date Added
-        </th>
-        <th></th>
-    </tr>
-    
-    @foreach (var item in Model.barrels)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Radius)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Height)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConstructionMaterial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contents)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-</table>
-<div class="form-group">
-    <input type="text" class="form-control" id="searchBoxCube" placeholder="Enter search term" onkeyup="searchTable(1)">
-    <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
-</div>
-<table class="table" id="indexTableCube">
-    <tr>
-        <th onclick="sortTable(0, 1)">
-            Side Length
-        </th>
-        <th onclick="sortTable(1, 1)">
-            Weight
-        </th>
-        <th onclick="sortTable(2, 1)">
-            Construction Material
-        </th>
-        <th onclick="sortTable(3, 1)">
-            Contents
-        </th>
-        <th onclick="sortTable(4, 1)">
-            Current Location
-        </th>
-        <th onclick="sortTable(5, 1)">
-            Date Added
-        </th>
-        <th></th>
-    </tr>
-
-<div class="container-fluid">
     <div class="row" align="center">
         <h3>Cubes</h3>
     </div>
@@ -129,7 +103,63 @@
                 </p>
             </div>
             <div class="row">
-
+                <div class="form-group">
+                    <input type="text" class="form-control" id="searchBoxCube" placeholder="Enter search term" onkeyup="searchTable(1)">
+                    <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <table class="table" id="indexTableCube">
+                <tr>
+                    <th onclick="sortTable(0, 1)">
+                        Side Length
+                    </th>
+                    <th onclick="sortTable(1, 1)">
+                        Weight
+                    </th>
+                    <th onclick="sortTable(2, 1)">
+                        Construction Material
+                    </th>
+                    <th onclick="sortTable(3, 1)">
+                        Contents
+                    </th>
+                    <th onclick="sortTable(4, 1)">
+                        Current Location
+                    </th>
+                    <th onclick="sortTable(5, 1)">
+                        Date Added
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model.cubes)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SideLength)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Weight)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ConstructionMaterial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contents)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CurrentLocation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateCreated)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "CubeEdit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "CubeDetails", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "CubeDelete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
             </table>
         </div>
     </div>
