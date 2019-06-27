@@ -9,65 +9,73 @@
 
 <div>
     <h3>Are you sure you want to delete this barrel?</h3>
-    <dl class="dl-horizontal">
+    <div class="container" style="color:#8B92B3">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-horizontal">
+                    <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Radius) (feet)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Radius) (feet)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Radius)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Radius)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Height) (feet)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Height) (feet)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Height)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight) (pounds)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Weight) (pounds)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Weight)
+                        </dd>
 
-        <dt>
-            @Html.DisplayName("Construction Material")
-        </dt>
+                        <dt>
+                            @Html.DisplayName("Construction Material")
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ConstructionMaterial)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.ConstructionMaterial)
+                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contents)
-        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Contents)
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contents)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.Contents)
+                        </dd>
 
-        <dt>
-            @Html.DisplayName("Current Location")
-        </dt>
+                        <dt>
+                            @Html.DisplayName("Current Location")
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CurrentLocation)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.CurrentLocation)
+                        </dd>
 
-        <dt>
-            @Html.DisplayName("Date Created")
-        </dt>
+                        <dt>
+                            @Html.DisplayName("Date Created")
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateCreated)
-        </dd>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateCreated)
+                        </dd>
 
-    </dl>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @using (Html.BeginForm())
     {
