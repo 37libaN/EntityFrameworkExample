@@ -3,16 +3,19 @@
 @{
     ViewBag.Title = "Barrel Storage";
 }
-    <head>
-        <link href="~/Style/StyleSheet.css" rel="stylesheet" />
-    </head>
+<head>
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+</head>
 
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Add New Barrel", "Create")
 </p>
-<button name="viewReset">Reset View</button>
+<div class="form-group">
+    <input type="text" class="form-control" id="searchBox" placeholder="Enter search term" onkeyup="searchTable()">
+    <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
+</div>
 <table class="table" id="indexTable">
     <tr>
         <th onclick="sortTable(0)">
@@ -109,6 +112,29 @@
                 if (switchcount == 0 && dir == "asc") {
                     dir = "desc";
                     switching = true;
+                }
+            }
+        }
+    }
+</script>
+<script>
+    function searchTable() {
+        var input, filter, table, tr, td, th, i, txtValue;
+        input = document.getElementById("searchBox");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("indexTable");
+        tr = table.getElementsByTagName("tr");
+        th = table.getElementsByTagName("th");
+        for (i = 1; i < tr.length; i++) {
+            tr[i].style.display = "none";
+        }
+        for (j = 0; j < th.length; j++) {
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[j];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1)
+                        tr[i].style.display = "";
                 }
             }
         }
