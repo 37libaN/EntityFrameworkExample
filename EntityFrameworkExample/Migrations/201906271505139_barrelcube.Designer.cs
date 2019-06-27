@@ -7,13 +7,13 @@ namespace EntityFrameworkExample.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0-preview6-19304-03")]
-    public sealed partial class addmigrationBarrel : IMigrationMetadata
+    public sealed partial class barrelcube : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addmigrationBarrel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(barrelcube));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906261758183_add-migration Barrel"; }
+            get { return "201906271505139_barrelcube"; }
         }
         
         string IMigrationMetadata.Source

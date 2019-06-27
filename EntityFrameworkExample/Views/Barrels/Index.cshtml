@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EntityFrameworkExample.Models.Barrel>
+﻿@model EntityFrameworkExample.Models.BarrelAndCubeWrapper
 
 @{
     ViewBag.Title = "Barrel Storage";
@@ -8,7 +8,7 @@
 </head>
 
 <h2>Index</h2>
-
+<h3>Barrels</h3>
 <p>
     @Html.ActionLink("Add New Barrel", "Create")
 </p>
@@ -41,8 +41,8 @@
         </th>
         <th></th>
     </tr>
-
-    @foreach (var item in Model)
+    
+    @foreach (var item in Model.barrels)
     {
         <tr>
             <td>
@@ -70,6 +70,62 @@
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+<h3>Cubes</h3>
+<p>
+    @Html.ActionLink("Add New Cube", "CubeCreate")
+</p>
+<table class="table" id="indexCubeTable">
+    <tr>
+        <th onclick="sortTable(0)">
+            Side Length
+        </th>
+        <th onclick="sortTable(1)">
+            Weight
+        </th>
+        <th onclick="sortTable(2)">
+            Construction Material
+        </th>
+        <th onclick="sortTable(3)">
+            Contents
+        </th>
+        <th onclick="sortTable(4)">
+            Current Location
+        </th>
+        <th onclick="sortTable(5)">
+            Date Added
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.cubes)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SideLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConstructionMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "CubeEdit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "CubeDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "CubeDelete", new { id = item.Id })
             </td>
         </tr>
     }
