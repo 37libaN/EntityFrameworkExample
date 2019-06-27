@@ -5,32 +5,33 @@
 }
 <head>
     <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    <script src="~/Scripts/Main.js"></script>
 </head>
 
 <h2>Archived</h2>
 
 <h3>Barrels</h3>
-<table class="table">
+<table class="table" id="indexTableBarrel">
     <tr>
-        <th>
+        <th onclick="sortTable(0, 0)">
             @Html.DisplayName("Radius")
         </th>
-        <th>
+        <th onclick="sortTable(1, 0)">
             @Html.DisplayName("Height")
         </th>
-        <th>
+        <th onclick="sortTable(2, 0)">
             @Html.DisplayName("Weight")
         </th>
-        <th>
+        <th onclick="sortTable(3, 0)">
             @Html.DisplayName("Construction Material")
         </th>
-        <th>
+        <th onclick="sortTable(4, 0)">
             @Html.DisplayName("Contents")
         </th>
-        <th>
+        <th onclick="sortTable(5, 0)">
             @Html.DisplayName("Current Location")
         </th>
-        <th>
+        <th onclick="sortTable(6, 0)">
             @Html.DisplayName("Date Created")
         </th>
         <th></th>
@@ -67,24 +68,24 @@
     }
 </table>
 <h3>Cubes</h3>
-<table class="table" id="archiveCubeTable">
+<table class="table" id="indexTableCube">
     <tr>
-        <th>
+        <th onclick="sortTable(0, 1)">
             Side Length
         </th>
-        <th>
+        <th onclick="sortTable(1, 1)">
             Weight
         </th>
-        <th>
+        <th onclick="sortTable(2, 1)">
             Construction Material
         </th>
-        <th>
+        <th onclick="sortTable(3, 1)">
             Contents
         </th>
-        <th>
+        <th onclick="sortTable(4, 1)">
             Current Location
         </th>
-        <th>
+        <th onclick="sortTable(5, 1)">
             Date Added
         </th>
         <th></th>

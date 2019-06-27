@@ -5,6 +5,7 @@
 }
 <head>
     <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    <script src="~/Scripts/Main.js"></script>
 </head>
 
 <h2>Index</h2>
@@ -13,30 +14,30 @@
     @Html.ActionLink("Add New Barrel", "Create")
 </p>
 <div class="form-group">
-    <input type="text" class="form-control" id="searchBox" placeholder="Enter search term" onkeyup="searchTable()">
+    <input type="text" class="form-control" id="searchBoxBarrel" placeholder="Enter search term" onkeyup="searchTable(0)">
     <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
 </div>
-<table class="table" id="indexTable">
+<table class="table" id="indexTableBarrel">
     <tr>
-        <th onclick="sortTable(0)">
+        <th onclick="sortTable(0, 0)">
             Radius (feet)
         </th>
-        <th onclick="sortTable(1)">
+        <th onclick="sortTable(1, 0)">
             Height (feet)
         </th>
-        <th onclick="sortTable(2)">
+        <th onclick="sortTable(2, 0)">
             Weight (pounds)
         </th>
-        <th onclick="sortTable(3)">
+        <th onclick="sortTable(3, 0)">
             Construction Material
         </th>
-        <th onclick="sortTable(4)">
+        <th onclick="sortTable(4, 0)">
             Contents
         </th>
-        <th onclick="sortTable(5)">
+        <th onclick="sortTable(5, 0)">
             Current Location
         </th>
-        <th onclick="sortTable(6)">
+        <th onclick="sortTable(6, 0)">
             Date Added
         </th>
         <th></th>
@@ -78,24 +79,28 @@
 <p>
     @Html.ActionLink("Add New Cube", "CubeCreate")
 </p>
-<table class="table" id="indexCubeTable">
+<div class="form-group">
+    <input type="text" class="form-control" id="searchBoxCube" placeholder="Enter search term" onkeyup="searchTable(1)">
+    <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
+</div>
+<table class="table" id="indexTableCube">
     <tr>
-        <th onclick="sortTable(0)">
+        <th onclick="sortTable(0, 1)">
             Side Length
         </th>
-        <th onclick="sortTable(1)">
+        <th onclick="sortTable(1, 1)">
             Weight
         </th>
-        <th onclick="sortTable(2)">
+        <th onclick="sortTable(2, 1)">
             Construction Material
         </th>
-        <th onclick="sortTable(3)">
+        <th onclick="sortTable(3, 1)">
             Contents
         </th>
-        <th onclick="sortTable(4)">
+        <th onclick="sortTable(4, 1)">
             Current Location
         </th>
-        <th onclick="sortTable(5)">
+        <th onclick="sortTable(5, 1)">
             Date Added
         </th>
         <th></th>
@@ -131,68 +136,4 @@
     }
 
 </table>
-<script>
-    function sortTable(n) {
-        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-        table = document.getElementById("indexTable");
-        switching = true;
-        dir = "asc";
-        while (switching) {
-            switching = false;
-            rows = table.rows;
-            for (i = 1; i < (rows.length - 1); i++) {
-                shouldSwitch = false;
-                x = rows[i].getElementsByTagName("TD")[n].innerHTML;
-                y = rows[i + 1].getElementsByTagName("TD")[n].innerHTML;
-                if (dir == "asc") {
-                    if ((!isNaN(Number(x)) && Number(x) > Number(y)) ||
-                        (Date.parse(x) instanceof Date && Date(x) > Date(y)) ||
-                        (x.trim().toLowerCase() > y.trim().toLowerCase())) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                } else if (dir == "desc") {
-                    if ((!isNaN(Number(x)) && Number(x) < Number(y)) ||
-                        (Date.parse(x) instanceof Date && Date(x) < Date(y)) ||
-                        (x.trim().toLowerCase() < y.trim().toLowerCase())) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-            }
-            if (shouldSwitch) {
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                switching = true;
-                switchcount++;
-            } else {
-                if (switchcount == 0 && dir == "asc") {
-                    dir = "desc";
-                    switching = true;
-                }
-            }
-        }
-    }
-</script>
-<script>
-    function searchTable() {
-        var input, filter, table, tr, td, th, i, txtValue;
-        input = document.getElementById("searchBox");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("indexTable");
-        tr = table.getElementsByTagName("tr");
-        th = table.getElementsByTagName("th");
-        for (i = 1; i < tr.length; i++) {
-            tr[i].style.display = "none";
-        }
-        for (j = 0; j < th.length; j++) {
-            for (i = 1; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[j];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1)
-                        tr[i].style.display = "";
-                }
-            }
-        }
-    }
-</script>
+
