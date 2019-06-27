@@ -3,19 +3,34 @@
 @{
     ViewBag.Title = "Barrel Storage";
 }
-<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link href="~/Style/StyleSheet.css" rel="stylesheet" />
     <script src="~/Scripts/Main.js"></script>
-</head>
+<div class="container-fluid">
+    <div class="row">
+        <h2>Index</h2>
+    </div>
+    <div class="row">
+        <h3>Barrels</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="row">
+                <p>
+                    @Html.ActionLink("Add New Barrel", "Create")
+                </p>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
 
-<h2>Index</h2>
-<h3>Barrels</h3>
-<p>
-    @Html.ActionLink("Add New Barrel", "Create")
-</p>
-<div class="form-group">
     <input type="text" class="form-control" id="searchBoxBarrel" placeholder="Enter search term" onkeyup="searchTable(0)">
     <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
+        </div>
+    </div>
 </div>
 <table class="table" id="indexTableBarrel">
     <tr>
@@ -75,10 +90,6 @@
         </tr>
     }
 </table>
-<h3>Cubes</h3>
-<p>
-    @Html.ActionLink("Add New Cube", "CubeCreate")
-</p>
 <div class="form-group">
     <input type="text" class="form-control" id="searchBoxCube" placeholder="Enter search term" onkeyup="searchTable(1)">
     <small id="emailHelp" class="form-text text-muted">Searches entire table for term matches.</small>
@@ -106,34 +117,21 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model.cubes)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SideLength)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConstructionMaterial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contents)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "CubeEdit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "CubeDetails", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "CubeDelete", new { id = item.Id })
-            </td>
-        </tr>
-    }
+<div class="container-fluid">
+    <div class="row" align="center">
+        <h3>Cubes</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="row">
+                <p>
+                    @Html.ActionLink("Add New Cube", "CubeCreate")
+                </p>
+            </div>
+            <div class="row">
 
-</table>
+            </table>
+        </div>
+    </div>
+</div>
 
