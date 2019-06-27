@@ -93,7 +93,7 @@
                         break;
                     }
                 } else if (dir == "desc") {
-                    if ((Number.parseFloat(x) instanceof Number && Number(x) < Number(y)) ||
+                    if ((!isNaN(Number(x)) && Number(x) < Number(y)) ||
                         (Date.parse(x) instanceof Date && Date(x) < Date(y)) ||
                         (x.trim().toLowerCase() < y.trim().toLowerCase())) {
                         shouldSwitch = true;
