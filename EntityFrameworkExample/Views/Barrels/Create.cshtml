@@ -11,38 +11,36 @@
 {
     @Html.AntiForgeryToken()
 <head>
-    <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="StyleSheet.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-    
-    <div class="container">
+<h2>Create a Barrel</h2>
+    <h2>  </h2>
+    <h2> </h2>
+    <div class="container" style="color:#8B92B3">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-4">
                         <!--Title, if any-->
                     </div>
-                        <h4>Creating Barrel</h4>
+
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <!--SubTitle, if any-->
-                </div>
                     </div>
+                </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-horizontal">
-                        <!--Editing Information-->
+                            <!--Editing Information-->
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
-                                <div class="col-sm-4">
-                                    Radius
+                                <div class="col-sm-4" style="font-size:15px">
+                                    Radius (Feet)
                                 </div>
                                 <div class="col-sm-8">
                                     @Html.EditorFor(model => model.Radius, new { htmlAttributes = new { @class = "form-control", @type = "number", min = 0 } })
@@ -51,55 +49,56 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-4">
-                                    Height
+                                <div class="col-sm-4" style="font-size:15px">
+                          
+                                        Height (Feet)
+                                    </div>
+                                    <div class="col-sm-8">
+                                        @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control", @type = "number", min = 0 } })
+                                        @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control", @type = "number", min = 0 } })
-                                    @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="col-sm-4">
-                                    Weight
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="font-size:15px">
+                                        Weight (Pounds)
+                                    </div>
+                                    <div class="col-sm-8">
+                                        @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control", @type = "number", min = 0 } })
+                                        @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control", @type = "number", min = 0 } })
-                                    @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="col-sm-4">
-                                    Construction Material
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="font-size:15px">
+                                        Construction Material
+                                    </div>
+                                    <div class="col-sm-8">
+                                        @Html.EditorFor(model => model.ConstructionMaterial, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ConstructionMaterial, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    @Html.EditorFor(model => model.ConstructionMaterial, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ConstructionMaterial, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="col-sm-4">
-                                    Contents
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="font-size:15px">
+                                        Contents
+                                    </div>
+                                    <div class="col-sm-8">
+                                        @Html.EditorFor(model => model.Contents, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Contents, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    @Html.EditorFor(model => model.Contents, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Contents, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="col-sm-4">
-                                    Current Location
-                                </div>
-                                <div class="col-sm-8">
-                                    @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CurrentLocation, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="font-size:15px">
+                                        Current Location
+                                    </div>
+                                    <div class="col-sm-8">
+                                        @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.CurrentLocation, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-8">
@@ -114,10 +113,9 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
-  
 }
 
 @section Scripts {

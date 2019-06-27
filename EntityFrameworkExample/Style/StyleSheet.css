@@ -22,12 +22,13 @@ h4{
 }
 
 h2 {
-    color: #1b7980;
+    color: #0c595a;
     text-align: center;
     text-transform: uppercase;
     font-family: Arial;
     letter-spacing: 5px;
     line-height: 30px;
+    font-size: 35px;
     text-size-adjust: 5000%;
     outline-color:aquamarine
 }
