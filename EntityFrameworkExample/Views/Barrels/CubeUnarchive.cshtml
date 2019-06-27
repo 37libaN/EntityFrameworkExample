@@ -1,36 +1,26 @@
-﻿@model EntityFrameworkExample.Models.Barrel
+﻿@model EntityFrameworkExample.Models.Cube
 
 @{
-    ViewBag.Title = "Unarchive";
+    ViewBag.Title = "CubeUnarchive";
 }
-<head>
-    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
-</head>
 
-<h2>Unarchive</h2>
+<h2>CubeUnarchive</h2>
 
-<h4>Do you want to unarchive this Barrel?</h4>
+<h3>DO you want to archive this?</h3>
 <div>
+    <h4>Cube</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Radius) (feet)
+            @Html.DisplayNameFor(model => model.SideLength)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Radius)
+            @Html.DisplayFor(model => model.SideLength)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Height) (feet)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight) (pounds)
+            @Html.DisplayNameFor(model => model.Weight)
         </dt>
 
         <dd>
@@ -38,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Construction Material")
+            @Html.DisplayNameFor(model => model.ConstructionMaterial)
         </dt>
 
         <dd>
@@ -54,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Construction Material")
+            @Html.DisplayNameFor(model => model.CurrentLocation)
         </dt>
 
         <dd>
@@ -62,13 +52,12 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Date Created")
+            @Html.DisplayNameFor(model => model.DateCreated)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.DateCreated)
         </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {

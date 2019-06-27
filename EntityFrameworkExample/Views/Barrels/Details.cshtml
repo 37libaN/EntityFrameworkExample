@@ -4,48 +4,52 @@
     ViewBag.Title = "Barrel Details";
 }
 <br />
+<head>
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+</head>
 <div>
+    <h2> DETAILS </h2>
     <h4>Barrel's Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.barrel.Radius) (feet)
+            @Html.DisplayName("Radius:")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Radius)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.barrel.Height) (feet)
+            @Html.DisplayName("Height:")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Height)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.barrel.Weight) (pounds)
+            @Html.DisplayName("Weight:")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Weight)
         </dd>
         <dt>
-            @Html.DisplayName("Construction Material")
+            @Html.DisplayName("Construction Material:")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.ConstructionMaterial)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.barrel.Contents)
+            @Html.DisplayName("Contents:")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Contents)
         </dd>
         <dt>
-            @Html.DisplayName("Current Location")
+            @Html.DisplayName("Current Location:")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.CurrentLocation)
         </dd>
         <dt>
-            @Html.DisplayName("Date Created")
+            @Html.DisplayName("Date Created:")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.DateCreated)

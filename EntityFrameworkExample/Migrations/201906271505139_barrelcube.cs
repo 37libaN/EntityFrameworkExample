@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Barrel : DbMigration
+    public partial class barrelcube : DbMigration
     {
         public override void Up()
         {
@@ -19,6 +19,22 @@
                         Contents = c.String(),
                         CurrentLocation = c.String(),
                         DateCreated = c.DateTime(nullable: false),
+                        hidden = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Cubes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        SideLength = c.Double(nullable: false),
+                        Weight = c.Double(nullable: false),
+                        ConstructionMaterial = c.String(),
+                        Contents = c.String(),
+                        CurrentLocation = c.String(),
+                        DateCreated = c.DateTime(nullable: false),
+                        hidden = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -52,6 +68,7 @@
             DropIndex("dbo.ExampleChildEntities", new[] { "ParentEntityId" });
             DropTable("dbo.ExampleChildEntities");
             DropTable("dbo.ExampleEntities");
+            DropTable("dbo.Cubes");
             DropTable("dbo.Barrels");
         }
     }
