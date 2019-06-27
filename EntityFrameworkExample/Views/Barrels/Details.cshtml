@@ -13,55 +13,55 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayName("Radius:")
+            @Html.DisplayName("Radius (feet)")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Radius)
         </dd>
         <dt>
-            @Html.DisplayName("Height:")
+            @Html.DisplayName("Height (feet)")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Height)
         </dd>
         <dt>
-            @Html.DisplayName("Weight:")
+            @Html.DisplayName("Weight (pounds)")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Weight)
         </dd>
         <dt>
-            @Html.DisplayName("Construction Material:")
+            @Html.DisplayName("Construction Material")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.ConstructionMaterial)
         </dd>
         <dt>
-            @Html.DisplayName("Contents:")
+            @Html.DisplayName("Contents")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.Contents)
         </dd>
         <dt>
-            @Html.DisplayName("Current Location:")
+            @Html.DisplayName("Current Location")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.CurrentLocation)
         </dd>
         <dt>
-            @Html.DisplayName("Date Created:")
+            @Html.DisplayName("Date Created")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.barrel.DateCreated)
         </dd>
         <dt>
-            Volume (feet<sup>3</sup>)
+            @Html.DisplayName("Volume (cubic feet)")
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.volume) (feet <sup>3</sup>)
+            @Html.DisplayFor(model => model.volume)
         </dd>
         <dt>
-            Duration
+            @Html.DisplayName("Duration")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.duration)

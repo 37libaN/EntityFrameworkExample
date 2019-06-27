@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.cube.SideLength)
+            @Html.DisplayName("Side Length (feet)")
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cube.Weight)
+            @Html.DisplayName("Weight (pounds)")
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cube.ConstructionMaterial)
+            @Html.DisplayName("Construction Material")
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cube.CurrentLocation)
+            @Html.DisplayName("Current Location")
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cube.DateCreated)
+            @Html.DisplayName("Date Created")
         </dt>
 
         <dd>
@@ -59,13 +59,13 @@
         </dd>
 
         <dt>
-            Volume:
+            @Html.DisplayName("Volume (cubic feet)")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.volume)
         </dd>
         <dt>
-            Duration:
+            @Html.DisplayName("Duration")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.duration)
