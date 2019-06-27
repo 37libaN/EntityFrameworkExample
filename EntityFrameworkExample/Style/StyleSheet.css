@@ -1,14 +1,26 @@
 ﻿body {
-    background-image: url("Background.gif");
-    background-repeat:no-repeat;
+    background-image:none;
+}
+
+p{
+    color:#8B92B3;
+    text-align:center;
+    font-family:Arial;
+    letter-spacing:2px;
+}
+
+h3{
+    color:#8B92B3;
+    text-align:center;
+    font-family:Arial;
 }
 
 h4{
     color: #8B92B3;
     text-align:center;
-    text-transform:uppercase;
     font-family: Arial;
 }
+
 h2 {
     color: #1b7980;
     text-align: center;
@@ -20,20 +32,14 @@ h2 {
     outline-color:aquamarine
 }
 
-tr {
-    color:#0cdede;
-}
-
-td {
+td{
     color: #8B92B3;
     text-align: center;
-    text-transform: lowercase;
     font-family: Arial;
 }
 
 dt {
     color: #8B92B3;
-    text-align: center;
-    text-transform: lowercase;
+    text-align: right;
     font-family: Arial;
 }

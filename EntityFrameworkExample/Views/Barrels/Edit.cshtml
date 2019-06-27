@@ -7,7 +7,7 @@
     <head>
         <link href="~/Style/StyleSheet.css" rel="stylesheet" />
     </head>
-<h2>Edit</h2>
+
 
 
 <br />
@@ -15,14 +15,15 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Editing Barrel Properties</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+<div class="form-horizontal">
+    <h2>Edit</h2>
+    <h4>EDITING BARREL PROPERTIES</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Radius, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Radius, "Radius (feet)",htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Radius, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Radius, "", new { @class = "text-danger" })
@@ -30,7 +31,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Height, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Height, "Height (feet)", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
@@ -38,7 +39,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Weight, "Weight (pounds)",htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
@@ -46,7 +47,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.ConstructionMaterial, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.ConstructionMaterial, "Materials", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.ConstructionMaterial, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ConstructionMaterial, "", new { @class = "text-danger" })
@@ -62,7 +63,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.CurrentLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CurrentLocation, "Current Location", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CurrentLocation, "", new { @class = "text-danger" })
@@ -70,7 +71,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.DateCreated, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.DateCreated, "Date Created (Central Time Zone)", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control", disable = "disabled", @readonly = "readonly" } })
             @Html.ValidationMessageFor(model => model.DateCreated, "", new { @class = "text-danger" })
